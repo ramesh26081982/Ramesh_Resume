@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D. Ramesh · Senior Software Engineer (.NET)</title>
+<meta name="description" content="Portfolio of D. Ramesh, Senior Software Engineer with 12+ years of experience in ASP.NET, SQL Server and MSBI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef2f7; --card:#ffffff; --ink:#14213d; --muted:#51607c; --line:#d3dbe8;
+  --blue:#3047e6; --blue-soft:#e3e8fd; --stamp:#e8a100; --ok:#1b8a5a;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(238,242,247,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:var(--head);font-weight:800;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--ink);color:#fff;font-size:15px}
+nav ul{display:flex;gap:26px;list-style:none;font-size:15px;font-weight:500}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--blue)}
+
+/* hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.role{color:var(--blue);font-weight:600;margin-bottom:18px}
+.hero h1{font-size:clamp(38px,6vw,66px);font-weight:800;margin-bottom:22px}
+.hero p.lead{color:var(--muted);max-width:30em;font-size:19px;margin-bottom:32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:600;text-decoration:none;font-size:16px;border:2px solid var(--ink);transition:transform .15s,background .15s}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--blue);border-color:var(--blue)}
+.btn.ghost:hover{background:var(--blue-soft)}
+.btn:active{transform:translateY(1px)}
+
+/* pipeline card */
+.invoice{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 18px 40px -22px rgba(20,33,61,.45);position:relative}
+.invoice .top{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px dashed var(--line);padding-bottom:14px;margin-bottom:8px}
+.invoice .top strong{font-family:var(--head);font-size:18px}
+.invoice .top span{font-size:14px;color:var(--muted)}
+.stage{display:flex;align-items:center;gap:14px;padding:11px 0;color:#8a96ad;transition:color .3s}
+.stage i{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:700;transition:all .3s}
+.stage small{margin-left:auto;font-size:13px}
+.stage.on{color:var(--ink)}
+.stage.on i{border-color:var(--blue);background:var(--blue-soft);color:var(--blue)}
+.stage.done{color:var(--ink)}
+.stage.done i{border-color:var(--ok);background:var(--ok);color:#fff}
+.stamp{position:absolute;right:22px;bottom:20px;border:3px solid var(--stamp);color:var(--stamp);font-family:var(--head);font-weight:800;font-size:22px;padding:2px 12px;border-radius:6px;transform:rotate(-9deg) scale(1.6);opacity:0;transition:all .35s cubic-bezier(.2,1.4,.4,1)}
+.invoice.paid .stamp{opacity:1;transform:rotate(-9deg) scale(1)}
+
+/* sections */
+section{padding:72px 0}
+section.alt{background:var(--card);border-block:1px solid var(--line)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about p{color:var(--muted);max-width:34em}
+.about p+p{margin-top:16px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fact{background:var(--paper);border-radius:12px;padding:20px}
+.fact b{display:block;font-family:var(--head);font-size:34px;line-height:1;margin-bottom:6px;color:var(--blue)}
+.fact span{font-size:14px;color:var(--muted)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.skill h3{font-size:18px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--blue-soft);color:#1f2f9e;font-size:14px;font-weight:500;padding:4px 12px;border-radius:99px}
+
+/* timeline */
+.timeline{position:relative;padding-left:34px;border-left:2px solid var(--line);margin-left:8px}
+.job{position:relative;margin-bottom:44px}
+.job:last-child{margin-bottom:0}
+.job::before{content:"";position:absolute;left:-43px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--blue)}
+.job.now::before{background:var(--blue)}
+.job header{position:static;background:none;border:0;backdrop-filter:none;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;align-items:baseline;margin-bottom:12px}
+.job h3{font-size:24px}
+.job time{color:var(--muted);font-size:15px;font-weight:500}
+.job ul{list-style:none}
+.job li{position:relative;padding-left:22px;margin-bottom:9px;color:var(--muted);max-width:44em}
+.job li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:2px;background:var(--blue)}
+.job .sub{font-size:15px;color:var(--blue);font-weight:600;margin-bottom:10px}
+
+.wins{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.win{border-left:4px solid var(--stamp);background:var(--card);padding:20px 22px;border-radius:0 12px 12px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.win b{font-family:var(--head);font-size:19px;display:block;margin-bottom:4px}
+.win span{color:var(--muted);font-size:15px}
+
+.edu{display:flex;flex-wrap:wrap;gap:20px 56px;align-items:baseline}
+.edu h3{font-size:22px}
+.edu p{color:var(--muted)}
+
+.contact{background:var(--ink);color:#fff;text-align:center}
+.contact h2{margin-bottom:12px}
+.contact p{color:#b9c4dd;margin-bottom:30px}
+.contact .btn{border-color:#fff;color:#fff}
+.contact .btn.primary{background:#fff;color:var(--ink)}
+.contact .btn.primary:hover{background:var(--stamp);border-color:var(--stamp)}
+.contact .btn.ghost:hover{background:rgba(255,255,255,.12)}
+.contact small{display:block;margin-top:28px;color:#8f9cbb}
+footer{background:var(--ink);color:#8f9cbb;text-align:center;font-size:14px;padding:0 0 28px}
+
+@media (max-width:820px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  nav ul{gap:16px;font-size:14px}
+  nav ul li:nth-child(n+4){display:none}
+  .hero{padding-top:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="logo" href="#top"><b>DR</b> D. Ramesh</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#achievements">Impact</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="role">Senior Software Engineer · .NET</p>
+        <h1>I build the systems that take invoices from inbox to payment.</h1>
+        <p class="lead">12+ years of ASP.NET, SQL Server and MSBI work: enterprise web apps, workflow engines and reporting that global clients rely on every day.</p>
+        <div class="btns">
+          <a class="btn primary" href="#experience">See my experience</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="invoice" id="invoice" aria-label="Animated example of an invoice moving through a processing workflow">
+        <div class="top"><strong>Invoice #4821</strong><span>Accounts Payable</span></div>
+        <div class="stage"><i>1</i>Import via SSIS<small>XML / text</small></div>
+        <div class="stage"><i>2</i>Validate and match<small>PO / Non-PO</small></div>
+        <div class="stage"><i>3</i>Configurable workflow<small>Windows service</small></div>
+        <div class="stage"><i>4</i>Approval via REST API<small>ASP.NET Core</small></div>
+        <div class="stage"><i>5</i>Report in SSRS<small>TAT tracked</small></div>
+        <div class="stamp">PROCESSED</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" class="alt">
+    <div class="wrap about">
+      <div>
+        <h2>About me</h2>
+        <p>I'm a committed team player who has spent more than a decade building and maintaining .NET applications in structured enterprise environments.</p>
+        <p>I lead teams, manage releases and review code, and I care about delivering web applications that scale and keep working after launch.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>12+</b><span>Years in .NET development</span></div>
+        <div class="fact"><b>6+</b><span>Global clients on a SaaS rollout</span></div>
+        <div class="fact"><b>2</b><span>Companies, long-term roles</span></div>
+        <div class="fact"><b>MCA</b><span>Arunai Engineering College</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill"><h3>Web</h3><div class="chips"><span>ASP.NET Core Web API</span><span>MVC 5</span><span>HTML</span><span>CSS</span></div></div>
+        <div class="skill"><h3>Languages</h3><div class="chips"><span>C#</span><span>JavaScript</span><span>jQuery</span><span>TypeScript</span></div></div>
+        <div class="skill"><h3>Database and BI</h3><div class="chips"><span>SQL Server 2026</span><span>SSIS</span><span>SSRS</span><span>OLAP</span></div></div>
+        <div class="skill"><h3>Tools</h3><div class="chips"><span>Visual Studio 2026</span><span>SVN</span><span>Bootstrap</span><span>Windows Services</span></div></div>
+        <div class="skill"><h3>Expertise</h3><div class="chips"><span>Release management</span><span>Code reviews</span><span>Stored procedures</span><span>Query optimization</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="alt">
+    <div class="wrap">
+      <h2>Work experience</h2>
+      <div class="timeline">
+        <article class="job now">
+          <header><h3>Soustr</h3><time>Jul 2024 – Present</time></header>
+          <ul>
+            <li>Develop and maintain web applications and services as part of the core development team.</li>
+            <li>Collaborate on software design, implementation and continuous improvement of product features.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <header><h3>EXELA Technologies</h3><time>Oct 2010 – Jun 2024</time></header>
+          <ul>
+            <li>Led development of the Invoice Processing System (Non-PO and PO) using ASP.NET Core Web API and SQL Server.</li>
+            <li>Designed Windows services, REST APIs and configurable workflow definitions.</li>
+            <li>Built a responsive UI with HTML, CSS3, Bootstrap, TypeScript and Angular custom directives.</li>
+            <li>Developed an Accounts Payable SaaS portal serving clients.</li>
+            <li>Wrote optimised stored procedures, database triggers and reusable search services.</li>
+            <li>Imported XML and text data with SSIS, and built SSRS reports with OLAP for shipment, TAT and duplicate tracking.</li>
+            <li>Monitored process queues, resolved stuck documents and alerted teams to server and shipment failures.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <h2>Key achievements</h2>
+      <div class="wins">
+        <div class="win"><b>12+ years</b><span>Progressive experience across 2 companies.</span></div>
+        <div class="win"><b>Invoice Processing portal</b><span>Delivered for enterprise use.</span></div>
+        <div class="win"><b>SaaS rollout</b><span>Led for 6+ global clients on the Bancpay product.</span></div>
+        <div class="win"><b>Faster reports</b><span>Reduced report load time by implementing OLAP.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="edu">
+        <div><h3>MCA</h3><p>Arunai Engineering College</p></div>
+        <p>2006 · 65%</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's work together</h2>
+      <p>Open to conversations about .NET, enterprise web applications and team leadership.</p>
+      <div class="btns" style="justify-content:center">
+        <a class="btn primary" href="mailto:rameshduraikannu@gmail.com">rameshduraikannu@gmail.com</a>
+        <a class="btn ghost" href="tel:+919894780865">+91 98947 80865</a>
+      </div>
+      <small>Gingee – 604205, Tamil Nadu, India</small>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> D. Ramesh</div></footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Hero: an invoice moves through the pipeline, then repeats
+(function(){
+  var card = document.getElementById('invoice');
+  var stages = card.querySelectorAll('.stage');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function finish(){
+    stages.forEach(function(s){ s.className = 'stage done'; s.firstChild.textContent = '\u2713'; });
+    card.classList.add('paid');
+  }
+  if (reduce) { finish(); return; }
+  var step = 0;
+  function reset(){
+    card.classList.remove('paid');
+    stages.forEach(function(s,i){ s.className = 'stage'; s.firstChild.textContent = i + 1; });
+  }
+  function tick(){
+    if (step > 0 && step <= stages.length) {
+      stages[step-1].className = 'stage done';
+      stages[step-1].firstChild.textContent = '\u2713';
+    }
+    if (step < stages.length) {
+      stages[step].className = 'stage on';
+      step++;
+      setTimeout(tick, 1100);
+    } else {
+      card.classList.add('paid');
+      setTimeout(function(){ reset(); step = 0; setTimeout(tick, 600); }, 3200);
+    }
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
